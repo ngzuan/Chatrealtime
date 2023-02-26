@@ -2,34 +2,44 @@ const mongoose = require("mongoose");
 
 const messageSchema = new mongoose.Schema(
   {
-    senderId: {
-      type: String,
-      required: true,
-    },
-    senderName: {
-      type: String,
-      required: true,
-    },
-    reseverId: {
-      type: String,
-      required: true,
-    },
-    message: {
-      text: {
-        type: String,
-        default: "",
+    members: [
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "User",
       },
-      image: {
-        type: String,
-        default: "",
+    ],
+    content: [
+      {
+        text: String,
+        images: [],
+        created: {
+          type: Date,
+          default: Date.now,
+        },
+        like: [
+          {
+            type: mongoose.Types.ObjectId,
+            ref: "User",
+          },
+        ],
+        sentBy: {
+          type: mongoose.Types.ObjectId,
+          ref: "User",
+        },
+        reply: {
+          type: mongoose.Types.ObjectId,
+          ref: "Message",
+        },
+        seen: [
+          {
+            type: mongoose.Types.ObjectId,
+            ref: "User",
+          },
+        ],
       },
-    },
-    status: {
-      type: String,
-      default: "unseen",
-    },
+    ],
   },
   { timestamps: true },
 );
 
-module.exports = mongoose.model("message", messageSchema);
+module.exports = mongoose.model("Message", messageSchema);

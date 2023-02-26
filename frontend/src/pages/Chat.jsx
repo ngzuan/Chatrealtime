@@ -2,6 +2,7 @@ import React from "react";
 import { BsTwitter } from "react-icons/bs";
 
 import { GrSend } from "react-icons/gr";
+import re
 
 export const Chat = () => {
   return (

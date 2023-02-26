@@ -23,10 +23,27 @@ var userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    images: [],
     isVerified: {
       type: Boolean,
       require: true,
       default: false,
+    },
+    following: [
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "User",
+      },
+    ],
+    follower: [
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "User",
+      },
+    ],
+    role: {
+      type: String,
+      default: "User",
     },
   },
   {
@@ -41,6 +58,10 @@ userSchema.pre("save", async function (next) {
   const salt = bcrypt.genSaltSync(10);
   this.password = await bcrypt.hash(this.password, salt);
 });
+userSchema.methods.comparePassword = async function (password) {
+  const result = await bcrypt.compare(password, this.password);
+  return result;
+};
 
 //Export the model
 module.exports = mongoose.model("User", userSchema);

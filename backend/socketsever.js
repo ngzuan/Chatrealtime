@@ -1,17 +1,16 @@
-const registerSocketSever = (sever) => {
-  const io = require("socket.io")(sever, {
+const registerSever = (socket) => {
+  const io = require("socket.io")(socket, {
     cors: {
       origin: "*",
       methods: ["GET", "POST"],
+      allowedHeaders: ["Content-type"],
     },
   });
-
   io.on("connection", (socket) => {
-    console.log("user connect");
-    console.log(socket.id);
+    socket.on("new-message", (newMessage) => {
+      socket.broadcast.emit("new-message", newMessage);
+    });
   });
 };
 
-module.exports = {
-  registerSocketSever,
-};
+module.exports = registerSever;

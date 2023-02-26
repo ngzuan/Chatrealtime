@@ -9,15 +9,15 @@ const dotenv = require("dotenv");
 const { errHandler, notFound } = require("./middlewares/errHandler");
 const dbconnect = require("./config/dbconnect");
 const authRouter = require("./routers/authRouter");
-
-const socketSever = require("./socketsever");
-
-dotenv.config();
+const messageRouter = require("./routers/messageRouter");
+const registerSever = require("./socketSever");
 dbconnect();
+dotenv.config();
+
 const PORT = process.env.PORT || 5000;
 
 const sever = http.createServer(app);
-socketSever.registerSocketSever(sever);
+
 app.use(cookie());
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -25,7 +25,9 @@ app.use(cors());
 app.use(morgan("common"));
 
 app.use("/api/user", authRouter);
+app.use("/api/message", messageRouter);
 
+registerSever(sever);
 sever.listen(PORT, () => {
   console.log(`server on Port ${PORT}`);
 });
