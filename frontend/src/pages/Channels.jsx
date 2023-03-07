@@ -3,7 +3,7 @@ import { SiDiscord } from "react-icons/si";
 import { FaUserFriends } from "react-icons/fa";
 // import { Background } from "../image/background.svg";
 
-const NavBar = () => {
+const Channels = () => {
   return (
     <div className="flex">
       <div className=" flex-col w-[72px] h-screen bg-primaryBlack">
@@ -55,4 +55,4 @@ const NavBar = () => {
     </div>
   );
 };
-export default NavBar;
+export default Channels;

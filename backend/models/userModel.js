@@ -29,18 +29,7 @@ var userSchema = new mongoose.Schema(
       require: true,
       default: false,
     },
-    following: [
-      {
-        type: mongoose.Types.ObjectId,
-        ref: "User",
-      },
-    ],
-    follower: [
-      {
-        type: mongoose.Types.ObjectId,
-        ref: "User",
-      },
-    ],
+    friends: [{ type: Schema.Types.Object, ref: "User" }],
     role: {
       type: String,
       default: "User",

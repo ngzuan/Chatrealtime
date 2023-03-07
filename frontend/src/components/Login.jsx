@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import ConnectSocket from "../clientSocket/ConnectSocket";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  ConnectSocket();
 
   return (
     <div className=" bg-blue-50 h-screen flex justify-center ">

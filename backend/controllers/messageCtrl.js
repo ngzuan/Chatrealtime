@@ -1,6 +1,5 @@
 const Message = require("../models/messageModel.js");
 const fs = require("fs");
-const asyncHandler = require("express-async-handler");
 
 const getAllMessages = async (req, res) => {
   try {
@@ -8,11 +7,11 @@ const getAllMessages = async (req, res) => {
     const messages = await Message.find({ members: { $in: userId } })
       .populate(
         "members",
-        "-password -secret -following -follower -role -updatedAt -email -createdAt -about -username",
+        "-password -friends -role -updatedAt -email -createdAt -about -username",
       )
       .populate(
         "content.sentBy",
-        "-password -secret -following -follower -role -updatedAt -email -createdAt -about -username",
+        "-password -friends -role -updatedAt -email -createdAt -about -username",
       )
       .sort({ updatedAt: -1 });
     return res.status(200).json({ messages });
@@ -48,7 +47,7 @@ const sendMassage = async (req, res) => {
     if (!image && !text) {
       return res.status(400).json({ msg: "Text or image is required!" });
     }
-    // data.seen
+
     let message = await Message.findOneAndUpdate(
       {
         members: [...receivedId, userId].sort(),
@@ -60,11 +59,11 @@ const sendMassage = async (req, res) => {
     )
       .populate(
         "content.sentBy",
-        "-password -secret -following -follower -role -updatedAt -email -createdAt -about -username",
+        "-password -friends -role -updatedAt -email -createdAt -about -username",
       )
       .populate(
         "members",
-        "-password -secret -following -follower -role -updatedAt -email -createdAt -about -username",
+        "-password -friends -role -updatedAt -email -createdAt -about -username",
       );
 
     if (!message) {
@@ -75,11 +74,11 @@ const sendMassage = async (req, res) => {
       message = await Message.findById(message._id)
         .populate(
           "members",
-          "-password -secret -following -follower -role -updatedAt -email -createdAt -about -username",
+          "-password -friends -role -updatedAt -email -createdAt -about -username",
         )
         .populate(
           "content.sentBy",
-          "-password -secret -following -follower -role -updatedAt -email -createdAt -about -username",
+          "-password -friends -role -updatedAt -email -createdAt -about -username",
         );
     }
 

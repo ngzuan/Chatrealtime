@@ -2,7 +2,8 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import { Chat } from "./pages/Chat";
+import Channels from "./pages/Channels";
+import Home from "./components/Home";
 
 const router = createBrowserRouter([
   {
@@ -10,12 +11,16 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
+    path: "/home",
+    element: <Home />,
+  },
+  {
     path: "/message/register",
     element: <Register />,
   },
   {
-    path: "/message/chat",
-    element: <Chat />,
+    path: "/message/channels",
+    element: <Channels />,
   },
 ]);
 
