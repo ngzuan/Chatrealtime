@@ -3,15 +3,14 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Channels from "./pages/Channels";
-import Home from "./components/Home";
-
+import Home from "./pages/Home";
 const router = createBrowserRouter([
   {
     path: "/message/login",
     element: <Login />,
   },
   {
-    path: "/home",
+    path: "/",
     element: <Home />,
   },
   {
@@ -19,7 +18,7 @@ const router = createBrowserRouter([
     element: <Register />,
   },
   {
-    path: "/message/channels",
+    path: "/channels",
     element: <Channels />,
   },
 ]);

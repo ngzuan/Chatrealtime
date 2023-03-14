@@ -1,58 +1,85 @@
 import React from "react";
+import ServerIcon from "../components/ServerIcon";
 import { SiDiscord } from "react-icons/si";
-import { FaUserFriends } from "react-icons/fa";
-// import { Background } from "../image/background.svg";
+import { AiOutlinePlus } from "react-icons/ai";
+import { BsChevronDown } from "react-icons/bs";
+import Channel from "../components/Channel";
+import avatar from "../image/avatar.jpg";
 
 const Channels = () => {
   return (
-    <div className="flex">
-      <div className=" flex-col w-[72px] h-screen bg-primaryBlack">
-        <div className=" flex justify-center items-center">
-          <div className="w-full border-r-1 border-gray-800 ">
-            <SiDiscord className=" mx-auto my-2 relative rounded-2xl px-2 w-11 h-11 text-white bg-blue-500 " />
-            <div className="w-[32px] m-auto bg-gray-300 h-0.5"></div>
+    <>
+      <div className="flex h-screen">
+        <div className="flex flex-col space-y-3 bg-discord_serversBg p-3 min-w-max">
+          <div className=" server-default hover:bg-discord_blue">
+            <SiDiscord className="text-white w-6 h-6" />
+          </div>
+          <hr className=" border-gray-700 border w-8 mx-auto"></hr>
+          <ServerIcon image={avatar} />
+          <ServerIcon image={avatar} />
+          <ServerIcon image={avatar} />
+          <ServerIcon image={avatar} />
+
+          <div className=" server-default group hover:bg-discord_green">
+            <AiOutlinePlus className=" text-discord_green h-7 w-7 group-hover:text-white" />
+          </div>
+        </div>
+        <div className=" bg-discord_channelsBg flex flex-col min-w-[232px]   ">
+          <h2 className=" flex text-white font-bold text-sm items-center justify-between border-b border-gray-800 p-4 hover:bg-discord_severNameHoverBg">
+            Nguyen Van Tuan... <BsChevronDown className=" h-4 w-4 ml-2" />
+          </h2>
+          <div className="flex-grow overflow-y-scroll scrollbar-hide text-discord_channelText">
+            <div className=" flex items-center p-2 mb-2">
+              <BsChevronDown className="w-2 mr-1" />
+              <h4 className=" font-semibold">Channels</h4>
+              <AiOutlinePlus className="ml-auto w-7 h-5 cursor-pointer hover:text-white" />
+            </div>
+            <div className=" flex flex-col space-y-2 px-2 mb-4">
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+              <Channel />
+            </div>
           </div>
         </div>
       </div>
-      <div className=" h-screen w-[calc(100%-72px)]">
-        <nav className="flex h-12 w-full bg-softGray border-b-2 shadow border-gray-700">
-          <div className="flex justify-center items-center w-[240px]  bg-[#1e1f22] border-b border-r border-gray-600 shadow ">
-            <button className=" text-[12px] font-sans p-1 text-[#989aa2] bg-primaryBlack1 rounded">
-              Tìm hoặc bắt đầu cuộc trò chuyện
-            </button>
-          </div>
-          <div className="w-[calc(100%-240px)] shadow">
-            <ui className="flex space-x-2 h-full  items-center list-none font-sans text-base text-[#e0e1e5]">
-              <li className="flex border-r border-[#4e5058]">
-                <FaUserFriends className=" text-2xl ml-4 text-[#82858f]" />
-                <button className="mx-2">Bạn bè</button>
-              </li>
-              <li>
-                <button>Trực tuyến</button>
-              </li>
-              <li>
-                <button>Tất cả</button>
-              </li>
-              <li>
-                <button>Đang chờ xử lý</button>
-              </li>
-              <li>
-                <button>Đã chặn</button>
-              </li>
-              <li>
-                <button>Thêm bạn</button>
-              </li>
-            </ui>
-          </div>
-        </nav>
-        <main className="flex w-full h-full">
-          <div className="w-[240px] border-r border-gray-700 bg-[#2B2D31]"></div>
-          <div className="w-[calc(100%-240px)] bg-softGray">
-            {/* <Background /> */}
-          </div>
-        </main>
-      </div>
-    </div>
+    </>
   );
 };
 export default Channels;
