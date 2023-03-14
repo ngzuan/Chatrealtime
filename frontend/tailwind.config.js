@@ -11,6 +11,14 @@ module.exports = {
         "Arial",
         "sans-serif",
       ],
+      font_display: [
+        "gg sans",
+        "Noto Sans",
+        "Helvetica Neue",
+        "Helvetica",
+        "Arial",
+        "sans - serif",
+      ],
     },
     screens: {
       sm: "480px",
@@ -34,6 +42,7 @@ module.exports = {
         discord_hoverBg: "#4e5058",
         discord_textHover: "#e0e1e5",
         discord_box: "",
+        off_white: "#f6f6f6",
       },
       height: {
         "83vh": "83vh",

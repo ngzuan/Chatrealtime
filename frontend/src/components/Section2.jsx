@@ -1,0 +1,26 @@
+import React from "react";
+import section3 from "../image/section3.svg";
+
+function Section2() {
+  return (
+    <section className=" bg-off_white">
+      <div className="grid lg:grid-cols-12 w-full  px-6 lg:w-[1180px]  sm:row-auto md:grid-rows-1  md:grid-cols-8 md:px-10 sm:grid-cols-4 max-w-[1260px] lg:mx-auto py-20 gap-x-5 ">
+        <div className="lg:col-start-6 lg:order-last my-auto sm:col-span-4 lg:col-end-13 md:col-start-1 md:col-end-5">
+          <img src={section3} className="" alt="" />
+        </div>
+        <div className="lg:col-start-1 lg:my-6  sm:col-span-4 flex flex-col lg:col-end-5 md:col-start-5 md:col-end-9">
+          <h1 className="text-back font-font_display leading-[120%] md:text-[38px] text-[24px] font-extrabold ">
+            Tạo một nơi cho bạn và chỉ cho những người nhận được lời mời
+          </h1>
+          <span className="lg:mt-8 text-base font-font_display font-normal leading-7">
+            Máy chủ Discord được sắp xếp theo các kênh chủ đề mà bạn có thể quản
+            lý, chia sẻ và nói về cuộc sống hàng ngày của mình mà không làm ảnh
+            hưởng đến nhóm trò chuyện.
+          </span>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default Section2;

@@ -2,7 +2,7 @@ import React from "react";
 import { BsDownload } from "react-icons/bs";
 function Hero() {
   return (
-    <main className=" grid lg:grid-cols-12 z-[1] w-full px-6 lg:w-[1180px] h-full  md:grid-cols-9 md:px-10 sm:grid-cols-5 max-w-[1260px] lg:mx-auto py-20 gap-5 ">
+    <main className="mb-auto grid lg:grid-cols-12 z-[1] w-full px-6 lg:w-[1180px] h-full  md:grid-cols-8 md:px-10 sm:grid-cols-4 max-w-[1260px] lg:mx-auto py-20 gap-5 ">
       <div className="lg:col-start-3  sm:col-start-1 sm:col-end-6 md:col-start-1 md:col-end-6 lg:col-end-11">
         <div className=" text-white">
           <h1 className="uppercase text-xl sm:text-3xl md:text-6xl font-font_headline text-render lg:text-center lg:font-extrabold font-extrabold leading-[100%] lg:leading-[95%] text-[56px]">
@@ -15,11 +15,11 @@ function Hero() {
             ngày và gặp mặt thường xuyên hơn.
           </div>
         </div>
-        <div className=" lg:flex md:justify-center sm:text-lg">
+        <div className="md:flex-wrap  md:flex lg:justify-center sm:text-lg">
           <button className=" items-center mt-6 mr-6 px-5 py-4 font-semibold flex bg-white md:py-4 md:px-8 hover:text-blue-700 rounded-full">
             <BsDownload /> Tải về cho Windows
           </button>
-          <button className="bg-black hover:bg-gray-600 font-semibold px-5 py-4 transition-opacity text-white md:py-4 mt-6 md:px-8 rounded-full">
+          <button className=" bg-black hover:bg-gray-600 font-semibold px-5 py-4 transition-opacity text-white md:py-4 mt-6 md:px-8 rounded-full">
             {" "}
             Mở Discord trong trình duyệt
           </button>
