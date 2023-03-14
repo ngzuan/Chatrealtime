@@ -50,5 +50,5 @@ module.exports = {
       borderRadius: ["hover", "focus"],
     },
   },
-  plugins: [require("tailwind-scrollbar-hide")],
+  plugins: [require("tailwind-scrollbar-hide"), require("daisyui")],
 };

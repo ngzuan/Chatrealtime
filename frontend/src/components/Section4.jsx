@@ -23,7 +23,7 @@ function Section4() {
         </div>
       </div>
       <div className="flex justify-center items-center mx-auto  px-6 lg:w-[1180px] ">
-        <div className="flex justify-center items-center w-full flex-col relative">
+        <div className="flex mb-40 justify-center items-center w-full flex-col relative">
           <div className=" absolute top-0">
             <img src={star} alt="" />
           </div>

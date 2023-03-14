@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import HomeBg from "../components/HomeBg";
@@ -19,6 +20,7 @@ function Home() {
       <Section2 />
       <Section3 />
       <Section4 />
+      <Footer />
     </>
   );
 }
